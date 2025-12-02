@@ -18,7 +18,7 @@ with open(file,'r',newline='') as csvfile:
             step = int(row[1:-1])
             step_remainder = step % 100
             step_rotation = step // 100
-            count = count + step_rotation
+            count += step_rotation
 
             if (direction == 'L'):
                 subtraction = current - step_remainder
@@ -26,10 +26,10 @@ with open(file,'r',newline='') as csvfile:
                     current = subtraction
                 elif (subtraction == 0):
                     current = 0
-                    count = count + 1
+                    count += 1
                 elif (subtraction < 0):
                     if current > 0:
-                        count = count + 1
+                        count += 1
                     current = subtraction + 100
 
                     
@@ -40,10 +40,10 @@ with open(file,'r',newline='') as csvfile:
                     current = summation
                 elif (summation == 100):
                     current = 0
-                    count = count + 1
+                    count += 1
                 elif (summation > 100):
                     if current > 0:
-                        count = count + 1
+                        count += 1
                     current = summation - 100
                
      
@@ -54,4 +54,5 @@ with open(file,'r',newline='') as csvfile:
     print("Result: ", count)
 
 
-#T
+
+#The number of time dial points at is 6700.
